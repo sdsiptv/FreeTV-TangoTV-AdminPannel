@@ -1,0 +1,53 @@
+.listNav {
+
+  background: #101010;
+  width: 90%;
+
+}
+
+.linkitem {
+  list-style: none;
+  text-decoration: none;
+  text-decoration-color: none;
+
+}
+
+.listNav .listItem {
+  display: flex;
+  width: 100%;
+  border-left: 5px solid #101010;
+  position: relative;
+  z-index: 2;
+  text-decoration: none;
+  color: #ffffff;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+
+.listNav .listItem:hover {
+  border-left: 5px solid #000000;
+  color: #000000;
+}
+
+
+.listNav .listItem:after {
+  content: "";
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 0px;
+  position: absolute;
+  transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+  z-index: -1;
+}
+
+.listNav .listItem:hover:after {
+  width: 100%;
+}
+
+.listNav .listItem:after {
+  background: #0088FE;
+}
