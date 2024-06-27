@@ -1,7 +1,7 @@
 // const { BASE_URL } = process.env;
 
 // const BASE_URL = 'http://localhost:3001';
-const BASE_URL = 'http://192.168.1.6:3001';
+const BASE_URL = 'http://192.168.1.3:3001';
 // const BASE_URL = 'https://freetv.tangotv.in/apis';
 // const BASE_URL = 'https://103.50.148.2/apis';
 

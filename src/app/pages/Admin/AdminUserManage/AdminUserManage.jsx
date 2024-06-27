@@ -36,26 +36,26 @@ function AdminUserManage() {
         textAlign: 'center',
       },
     },
-    {
-      title: 'Actions',
-      sorting: false,
-      render: rowData => (
-        <Tooltip title="Edit">
-          <IconButton
-            variant="contained"
-            size="small"
-            color="secondary"
-            onClick={() => {
-              history.push('/EditUser', {
-                state: { data: rowData },
-              });
-            }}
-          >
-            <EditIcon />
-          </IconButton>
-        </Tooltip>
-      ),
-    },
+    // {
+    //   title: 'Actions',
+    //   sorting: false,
+    //   render: rowData => (
+    //     <Tooltip title="Edit">
+    //       <IconButton
+    //         variant="contained"
+    //         size="small"
+    //         color="secondary"
+    //         onClick={() => {
+    //           history.push('/EditUser', {
+    //             state: { data: rowData },
+    //           });
+    //         }}
+    //       >
+    //         <EditIcon />
+    //       </IconButton>
+    //     </Tooltip>
+    //   ),
+    // },
   ];
 
   const getAdminUsers = () => {
@@ -91,7 +91,7 @@ function AdminUserManage() {
           <Grid container spacing={1}>
             <Grid item xs={12}>
               <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                <Button
+                {/* <Button
                   variant="contained"
                   style={{ backgroundColor: GREEN }}
                   onClick={() => {
@@ -99,12 +99,12 @@ function AdminUserManage() {
                   }}
                 >
                   Add User
-                </Button>
+                </Button> */}
               </div>
             </Grid>
 
             <Grid item xs={12}>
-              <MaterialTables
+              <DRMWaitListTable
                 title={'Admin Users'}
                 columns={columns}
                 data={userData}
