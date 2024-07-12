@@ -38,6 +38,11 @@ export default function EditDevotionals() {
     const [providerData, setProviderData] = useState([]);
     const [selectedOTTCategory, setSelectedOTTCategory] = useState('');
 
+    const roles = [
+        { label: 'Live', value: 0 },
+        { label: 'Recorded', value: 1 },
+    ];
+
     const [devotional_id, setDevotional_id] = useState();
 
     const [educationBoard, SetEducationBoard] = useState([]);
@@ -46,7 +51,7 @@ export default function EditDevotionals() {
     const [selectedProvider, setSelectedProvider] = useState('');
     // const [selectedLanguage, setSelectedOTTCategory] = useState('');
     const [inputFields, setInputFields] = useState([
-        { id: uuidv4(), title: '', url: '' },
+        { id: uuidv4(), title: '', url: '', stream: '' },
     ]);
 
     const [vodLanguage, setVodLanguage] = useState([]);
@@ -145,14 +150,13 @@ export default function EditDevotionals() {
         data.append('url', 'url');
         data.append('enabled', getValues('enabled') ? getValues('enabled') : 0);
         data.append('image', imageObj);
-    
-
 
         let encryptedData = [];
         inputFields.map(e => {
             let json = {
                 id: e?.id,
                 title: e?.title,
+                stream: e.stream,
                 url: encrypt(e?.url),
             };
             encryptedData.push(json);
@@ -179,7 +183,7 @@ export default function EditDevotionals() {
     };
 
     const handleAddFields = () => {
-        setInputFields([...inputFields, { id: uuidv4(), title: '', url: '' }]);
+        setInputFields([...inputFields, { id: uuidv4(), title: '', url: '', role: '' }]);
     };
 
     const handleRemoveFields = id => {
@@ -228,6 +232,7 @@ export default function EditDevotionals() {
                     let json = {
                         id: e?.id,
                         mod_id: e?.mod_id,
+                        stream: e?.stream,
                         title: e?.title,
                         url: decrypt(e?.url),
                     };
@@ -551,6 +556,23 @@ export default function EditDevotionals() {
                                         value={inputField.title}
                                         onChange={event => handleChangeInput(inputField.id, event)}
                                     />
+
+                                    <TextField
+                                        name="stream"
+                                        select
+                                        label="Stream"
+                                        variant="outlined"
+                                        value={inputField.stream}  
+                                        onChange={event => handleChangeInput(inputField.id, event)}
+                                        style={{ width: 120 }}
+                                    >
+                                        {roles.map(option => (
+                                            <MenuItem key={option.value} value={option.value}>
+                                                {option.label}
+                                            </MenuItem>
+                                        ))}
+                                    </TextField>
+
                                     <TextField
                                         name="url"
                                         label="URL"

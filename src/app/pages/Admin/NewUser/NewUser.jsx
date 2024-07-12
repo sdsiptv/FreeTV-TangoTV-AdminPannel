@@ -35,7 +35,7 @@ export default function NewUser() {
   const {
     register,
     handleSubmit,
-    control,
+    control, 
     getValues,
     formState: { errors },
   } = useForm();
@@ -308,7 +308,7 @@ export default function NewUser() {
               </TextField>
             </Grid>
 
-            <Grid item xs={12}>
+            <Grid item xs={12}> 
               <Controller
                 name="enabled"
                 control={control}

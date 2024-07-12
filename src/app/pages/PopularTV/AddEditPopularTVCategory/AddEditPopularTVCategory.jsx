@@ -86,7 +86,7 @@ import {
                   fullWidth
                   name="position"
                   label="Position"
-                  type="number"
+                  type="text"
                   InputLabelProps={{ shrink: true }}
                   id="position"
                   {...register('position', { required: true })}

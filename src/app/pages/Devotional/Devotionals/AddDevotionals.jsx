@@ -37,6 +37,11 @@ export default function AddDevotionals() {
   const [providerData, setProviderData] = useState([]);
   const [selectedProvider, setSelectedProvider] = useState('');
 
+  const roles = [
+    { label: 'Live', value: 0 },
+    { label: 'Recorded', value: 1 },
+  ];
+
   const [selectedOTTCategory, setSelectedOTTCategory] = useState('');
 
   const [LocationData, setLocationData] = useState([]);
@@ -44,7 +49,7 @@ export default function AddDevotionals() {
 
   // const [selectedLanguage, setSelectedOTTCategory] = useState('');
   const [inputFields, setInputFields] = useState([
-    { id: uuidv4(), title: '', url: '' },
+    { id: uuidv4(), title: '', url: '', stream: '' },
   ]);
   const [educationBoard, SetEducationBoard] = useState([]);
   const [valueEducationBoard, SetValueEducationBoard] = useState([]);
@@ -54,6 +59,7 @@ export default function AddDevotionals() {
 
   const [imageObj, setImageObj] = useState(undefined);
   const [image, setImage] = useState('');
+
 
   const handleImageChange = event => {
     const fileUploaded = event.target.files[0];
@@ -119,6 +125,7 @@ export default function AddDevotionals() {
       let json = {
         id: e?.id,
         title: e?.title,
+        stream: e.role,
         url: encrypt(e?.url),
       };
       encryptedData.push(json);
@@ -133,9 +140,10 @@ export default function AddDevotionals() {
   };
 
   const handleChangeInput = (id, event) => {
+    const { name, value } = event.target;
     const newInputFields = inputFields.map(i => {
       if (id === i.id) {
-        i[event.target.name] = event.target.value;
+        i[name] = value;
       }
       return i;
     });
@@ -144,7 +152,7 @@ export default function AddDevotionals() {
   };
 
   const handleAddFields = () => {
-    setInputFields([...inputFields, { id: uuidv4(), title: '', url: '' }]);
+    setInputFields([...inputFields, { id: uuidv4(), title: '', url: '', role: '' }]);
   };
 
   const handleRemoveFields = id => {
@@ -503,6 +511,23 @@ export default function AddDevotionals() {
                     value={inputField.title}
                     onChange={event => handleChangeInput(inputField.id, event)}
                   />
+
+                  <TextField
+                    name="role"
+                    select
+                    label="Stream"
+                    variant="outlined"
+                    value={inputField.role}
+                    onChange={event => handleChangeInput(inputField.id, event)}
+                    style={{ width: 120 }}
+                  >
+                    {roles.map(option => (
+                      <MenuItem key={option.value} value={option.value}>
+                        {option.label}
+                      </MenuItem>
+                    ))}
+                  </TextField>
+
                   <TextField
                     name="url"
                     label="URL"
