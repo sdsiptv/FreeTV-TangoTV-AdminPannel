@@ -189,6 +189,11 @@ import AddDevotionals from './pages/Devotional/Devotionals/AddDevotionals';
 import EditDevotionals from './pages/Devotional/Devotionals/EditDevotionals';
 import ListServerLogs from './pages/Admin/ServerLogs/ListServerLogs';
 import ListAccessLogs from './pages/Admin/AccessLogs/AccessLogs';
+import ListPartner from './pages/Admin/Partner/ListPartner';
+import AddEditPartner from './pages/Admin/Partner/AddEditPartner/AddEditPartner';
+import DevotionalBulkUpload from './pages/Devotional/DevotionalBulkUpload/DevotionalBulkUpload';
+import ViewLandingChannels from './pages/LiveStreams/LandingChannels/ViewLandingChannels';
+import AddEditLandingChannels from './pages/LiveStreams/LandingChannels/AddEditLandingChannels';
 export function App() {
   const { i18n } = useTranslation();
   const isLoading = useSelector(state => _.get(state, 'session.isLoading'));
@@ -245,6 +250,11 @@ export function App() {
 
           <PrivateRoute path="/AccessLogs" component={ListAccessLogs} />
 
+          <PrivateRoute
+            path="/DevotionalBulkUpload"
+            component={DevotionalBulkUpload}
+            pageMode="add"
+          />
 
           <PrivateRoute
             path="/SourceIP"
@@ -331,6 +341,23 @@ export function App() {
           <PrivateRoute
             path="/EditChannelPackage"
             component={EditChannelPackage}
+          />
+
+          {/* LANDING CHANNELS */}
+
+          <PrivateRoute
+            path="/LandingChannel"
+            component={ViewLandingChannels}
+          />
+          <PrivateRoute
+            path="/AddLandingChannels"
+            component={AddEditLandingChannels}
+            pageMode="add"
+          />
+          <PrivateRoute
+            path="/EditLandingChannels"
+            component={AddEditLandingChannels}
+            pageMode="edit"
           />
 
           <PrivateRoute path="/UserEngineerings" component={ViewListUserEngineering} />
@@ -523,6 +550,20 @@ export function App() {
           <PrivateRoute
             path="/EditEducations"
             component={EditEducation}
+          />
+
+          {/* Education PROVIDER  */}
+
+          <PrivateRoute path="/ListPartner" component={ListPartner} />
+          <PrivateRoute
+            path="/AddPartner"
+            component={AddEditPartner}
+            pageMode="add"
+          />
+          <PrivateRoute
+            path="/EditPartner"
+            component={AddEditPartner}
+            pageMode="edit"
           />
 
           {/* Devotional CATEGORY  */}

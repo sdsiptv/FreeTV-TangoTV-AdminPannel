@@ -27,6 +27,7 @@ export default function ListDevotionals() {
           <img src={rowData.image} alt="" width={40} height={30} />
         ) : null,
     },
+    { field: 'devotional_id', title: 'ID' },
     { field: 'title', title: 'Title' },
     { field: 'temple', title: 'Temple' },
     { field: 'year', title: 'Year' },

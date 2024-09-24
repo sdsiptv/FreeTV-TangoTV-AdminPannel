@@ -28,6 +28,7 @@ export default function PopularTVProviders() {
         ) : null,
     },
     { field: 'providerName', title: 'Name' },
+    { field: 'providerId', title: 'Provider ID' },
     {
       field: 'actions',
       title: 'Actions',

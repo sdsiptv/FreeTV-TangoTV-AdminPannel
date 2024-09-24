@@ -118,6 +118,7 @@ export default function Sidebar() {
                 { name: 'Server Logs', link: '/ServerLogs' },
                 { name: 'Access Logs', link: '/AccessLogs' },
                 { name: 'Socket', link: '/Socket' },
+                { name: 'Partner', link: '/ListPartner' }
               ].map((value, index) => {
                 return (
                   <ListItem
@@ -177,6 +178,7 @@ export default function Sidebar() {
                 { name: 'Manage Package', link: '/ManagePackageStreams' },
                 { name: 'EPG', link: '/EPG' },
                 { name: 'View Channel Status', link: '/ChannelStatus' },
+                { name: 'Landing Channel', link: '/LandingChannel' },
               ].map((value, index) => {
                 return (
                   <ListItem
@@ -331,6 +333,7 @@ export default function Sidebar() {
               style={{ backgroundColor: '#212121' }}
             >
               {[
+                 { name: 'Bulk Upload', link: '/DevotionalBulkUpload' },
                 { name: 'Locations', link: '/Location' },
                 { name: 'DEVOTIONAL Category', link: '/DEVCategory' },
                 { name: 'DEVOTIONAL Providers', link: '/DevotionalProviders' },

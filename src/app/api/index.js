@@ -181,6 +181,28 @@ const apis = {
     );
   },
 
+  // LANDING PAGE
+
+  getLandingChannels: () => {
+    return API.get(API_ENDPOINTS.GET_LANDING_CHANNELS);
+  },
+
+  addLandingChannels: (id, is_landing) => {
+    return API.post(API_ENDPOINTS.POST_LANDING_CHANNELS, {
+      id: id,
+      is_landing: is_landing,
+    });
+  },
+
+  editLandingChannels: (id, is_landing) => {
+    return API.put(
+      API_ENDPOINTS.PUT_LANDING_CHANNELS + '/' + id,
+      {
+        is_landing: is_landing,
+      },
+    );
+  },
+
   //channel package
 
   addChannelPackage: (Name, enabled, channels) => {
@@ -555,6 +577,41 @@ const apis = {
     );
   },
 
+  // PARTNER
+
+  getPartner: () => {
+    return API.get(API_ENDPOINTS.GET_PARTNER);
+  },
+
+  addPartner: formdata => {
+    return API.post(API_ENDPOINTS.ADD_PARTNER, formdata, {
+      [HEADERS.CONTENT_TYPE]: [HEADERS.MULTIPART],
+    });
+  },
+
+  editPartner: (id, formdata) => {
+    return API.put(API_ENDPOINTS.EDIT_PARTNER + '/' + id, formdata, {
+      [HEADERS.CONTENT_TYPE]: [HEADERS.MULTIPART],
+    });
+  },
+
+  deletePartner: id => {
+    return API.delete(
+      API_ENDPOINTS.DELETE_PARTNER + '?id=' + id,
+    );
+  },
+
+  // DEVOTIONAL BULKUPLOAD
+
+  editDevotionalBulkUpload: (url) => {
+    return API.put(
+      API_ENDPOINTS.PUT_DEVOTIONAL_BULKUPLOADS,
+      {
+        url: url,
+      },
+    );
+  },
+
   // LOCATION
 
   getLocation: () => {
@@ -641,9 +698,9 @@ const apis = {
     );
   },
 
-   // DEVOTIONAL
+  // DEVOTIONAL
 
-   getDEVOTIONAL: () => {
+  getDEVOTIONAL: () => {
     return API.get(API_ENDPOINTS.GET_DEVOTIONAL);
   },
 

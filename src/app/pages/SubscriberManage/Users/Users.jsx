@@ -22,6 +22,7 @@ export default function SubscriberUser() {
   let isSelfSigned = process.env.REACT_APP_SELF;
   let history = useHistory();
   const columns = [
+    { field: 'id', title: 'Customer ID' },
     { field: 'username', title: 'Username' },
     {
       field: 'email',
@@ -30,13 +31,10 @@ export default function SubscriberUser() {
     { field: 'name', title: 'Name' },
     { field: 'phone', title: 'Phone' },
     { field: 'macs', title: 'MAC' },
-    { field: 'company', title: 'Company' },
-    { field: 'website', title: 'Website' },
-    { field: 'address', title: 'Address' },
     { field: 'areaCode', title: 'Area Code' },
     { field: 'country', title: 'Country' },
-    { field: 'mobile', title: 'Mobile' },
-    { field: 'sessionLimit', title: 'Session Limit' },
+    { field: 'createdAt', title: 'createdAt' },
+    { field: 'updateAt', title: 'updateAt' },
   ];
 
   if (isSelfSigned === 'true') {

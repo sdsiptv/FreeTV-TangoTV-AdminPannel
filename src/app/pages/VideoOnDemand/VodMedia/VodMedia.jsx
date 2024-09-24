@@ -34,8 +34,16 @@ export default function VODMedia() {
     },
     { field: 'year', title: 'Year' },
     {
-      field: 'description',
-      title: 'Description',
+      field: 'genres',
+      title: 'Genres',
+    },
+    {
+      field: 'category_id',
+      title: 'Category',
+    },
+    {
+      field: 'top_trending',
+      title: 'Top Trending',
     },
     {
       field: 'country',

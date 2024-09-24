@@ -49,7 +49,8 @@ export default function UserPackageDetails() {
   const columns = [
     { field: 'customerId', title: 'Customer Id' },
     { field: 'customerName', title: 'Customer Number' },
-    // { field: 'period', title: 'Period' },
+    { field: 'macs', title: 'Mac ID' },
+    { field: 'phone', title: 'Mobile Number' },
     {
       field: 'startDate',
       title: 'Start Date',

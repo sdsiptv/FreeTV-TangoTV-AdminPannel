@@ -22,6 +22,7 @@ export default function VODCategories() {
 
   const columns = [
     { field: 'categoryName', title: 'Name' },
+    { field: 'categoryId', title: 'Category' },
     { field: 'vodCount', title: 'VOD Count' },
     { field: 'position', title: 'Position' },
     {

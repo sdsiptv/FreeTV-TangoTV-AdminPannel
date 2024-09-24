@@ -21,6 +21,7 @@ export default function PopularTVCategories() {
 
   const columns = [
     { field: 'categoryName', title: 'Name' },
+    { field: 'categoryId', title: 'Category ID' },
     { field: 'position', title: 'Position' },
     { field: 'populartvCount', title: 'Popular TV Count' },
     {

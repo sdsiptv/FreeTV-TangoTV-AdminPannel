@@ -32,6 +32,8 @@ export default function PopularTVMedia() {
     { field: 'director', title: 'Director' },
     { field: 'year', title: 'Year' },
     { field: 'description', title: 'Description' },
+    { field: 'category_id', title: 'Category' },
+    { field: 'provider_id', title: 'Provider' },    
     { field: 'country', title: 'Country' },
     { field: 'enabled', title: 'Enabled' },
     {

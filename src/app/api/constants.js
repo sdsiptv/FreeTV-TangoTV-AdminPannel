@@ -1,7 +1,7 @@
 // const { BASE_URL } = process.env;
 
 // const BASE_URL = 'http://localhost:3001';
-const BASE_URL = 'http://192.168.1.14:3001';
+const BASE_URL = 'http://192.168.1.3:3001';
 // const BASE_URL = 'https://freetv.tangotv.in/apis';
 // const BASE_URL = 'https://103.50.148.2/apis';
 
@@ -41,6 +41,10 @@ const API_ENDPOINTS = {
   EDIT_CHANNEL_PACKAGE: `${BASE_URL}/admin/channelpackages`,
   DELETE_CHANNEL_PACKAGE: `${BASE_URL}/admin/channelpackages`,
 
+  GET_LANDING_CHANNELS: `${BASE_URL}/admin/landingchannel`,
+  POST_LANDING_CHANNELS: `${BASE_URL}/admin/landingchannel`,
+  PUT_LANDING_CHANNELS: `${BASE_URL}/admin/landingchannel`,
+  
   POST_SOURCEIP: `${BASE_URL}/admin/sourceip`,
   GET_SOURCEIP: `${BASE_URL}/admin/sourceip`,
   PUT_SOURCEIP: `${BASE_URL}/admin/sourceip`,
@@ -119,6 +123,11 @@ const API_ENDPOINTS = {
   EDIT_EDUCATION_BOARD: `${BASE_URL}/admin/educationalboard`,
   DELETE_EDUCATION_BOARD: `${BASE_URL}/admin/educationalboard`,
   
+  GET_PARTNER: `${BASE_URL}/admin/partnerLogo`,
+  ADD_PARTNER: `${BASE_URL}/admin/partnerLogo`,
+  EDIT_PARTNER: `${BASE_URL}/admin/partnerLogo`,
+  DELETE_PARTNER: `${BASE_URL}/admin/partnerLogo`,
+
   ADD_DEVOTIONAL_CATEGORY: `${BASE_URL}/admin/devotionalcat`,
   GET_DEVOTIONAL_CATEGORY: `${BASE_URL}/admin/devotionalcat`,
   EDIT_DEVOTIONAL_CATEGORY: `${BASE_URL}/admin/devotionalcat`,
@@ -128,6 +137,8 @@ const API_ENDPOINTS = {
   ADD_DEVOTIONAL_PROVIDERS: `${BASE_URL}/admin/devotionalproviders`,
   EDIT_DEVOTIONAL_PROVIDERS: `${BASE_URL}/admin/devotionalproviders`,
   DELETE_DEVOTIONAL_PROVIDERS: `${BASE_URL}/admin/devotionalproviders`,
+
+  PUT_DEVOTIONAL_BULKUPLOADS:`${BASE_URL}/admin/devotionalurlbulk`,
 
   ADD_LOCATION: `${BASE_URL}/admin/location`,
   GET_LOCATION: `${BASE_URL}/admin/location`,
